@@ -1,0 +1,43 @@
+header {
+    height: 30px;
+}
+
+.cabecalho__telap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+}
+.imagemlogo {
+    max-width: 200px; 
+    max-height: 100px;}
+
+.banner__titulo {
+        text-align: center; 
+        margin-top: 18px;
+        font-size: 18px;
+    }
+.listaopcoes {
+  display: flex;
+  flex-direction: column; /* Define a direção da lista como vertical */
+}
+
+.item {
+    margin: 10px;
+    display: flex;
+    align-items: center; /* Alinha os itens verticalmente */
+}
+
+.item img {
+    width: 100px; /* Tamanho fixo em pixels */
+    height: 100px; /* Altura fixa em pixels */
+    object-fit: cover; /* Ajusta a imagem para cobrir o espaço do contêiner */
+    margin-right: 10px; /* Espaçamento entre a imagem e o texto */
+}
+.item button {
+    flex: 1; /* Ocupa todo o espaço disponível horizontalmente */
+    font-size: 18px;
+    background-color: transparent; /* Define o fundo como transparente */
+    border: none;
+    text-align: left; /* Alinha o texto do botão à esquerda */
+}

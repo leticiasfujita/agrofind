@@ -1,0 +1,7 @@
+{
+  "name": "agroFind",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

@@ -1,0 +1,19 @@
+<h1>Login</h1>
+
+<img src="assets/icon/img/logoagro.svg" alt="imagemlogo">
+
+<div class="formulario__campo">
+  <label class="campo__etiqueta" for="userlogin">Login</label>
+  <input #userloginInput name="userlogin" id="userlogin" class="campo__escrita" />
+  <div id="erro"></div>
+
+<div class="formulario__campo">
+  <label class="campo__etiqueta" for="senha">Senha</label>
+  <input #senhaInput type="password" placeholder="Senha" class="campo__senha">
+</div>
+
+<button class="formulario__botao" (click)="entrarLogin()">Entrar</button>
+</div>
+
+<h2 class="banner__titulo">Não tem cadastro?!</h2>
+<button (click)="cadastrar()">Clique aqui</button>
