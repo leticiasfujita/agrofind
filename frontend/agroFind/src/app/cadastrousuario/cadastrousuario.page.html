@@ -1,7 +1,7 @@
 <div class="principal__titulo">
 <h1>Cadastro Usuário</h1>
 </div>
-
+<div class="formulario">
   <form [formGroup]="formularioUsuario" (ngSubmit)="onSubmit()">
     <div class="formulario__campo">
       <label class="campo__etiqueta" for="nome">Nome Completo</label>
@@ -80,5 +80,5 @@
 
     <ion-button type="submit" [disabled]="formularioUsuario.invalid">CRIAR</ion-button>
   </form>
- 
+</div>
 

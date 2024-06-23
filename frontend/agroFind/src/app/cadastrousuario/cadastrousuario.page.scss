@@ -29,6 +29,10 @@
   margin-bottom: 1em; 
 }
 
+.formulario{
+  overflow: auto;
+}
+
 .formulario__botao {
   background: var(--green);
   padding: 1em 4em;
