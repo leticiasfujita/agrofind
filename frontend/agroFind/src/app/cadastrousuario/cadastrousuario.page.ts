@@ -27,7 +27,6 @@ export class CadastrousuarioPage implements OnInit {
     cidade: new FormControl('', Validators.required),
     estado: new FormControl('', Validators.required),
     contato: new FormControl('', [Validators.required]),
-    userLogin: new FormControl('', Validators.required),
     senha: new FormControl('', Validators.required)
   });
 

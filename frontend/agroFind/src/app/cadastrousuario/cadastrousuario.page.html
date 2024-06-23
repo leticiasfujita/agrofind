@@ -1,3 +1,5 @@
+
+<div class="container">
 <div class="principal__titulo">
 <h1>Cadastro Usuário</h1>
 </div>
@@ -67,18 +69,12 @@
       <input name="telefone" id="telefone" formControlName="contato" type="tel" placeholder="(XX) XXXXX-XXXX" class="campo__escrita"/>
     </div>
 
-    <div class="formulario__campo">
-      <label class="campo__etiqueta" for="userlogin">User - Login</label>
-      <input name="userlogin" id="userlogin" formControlName="userLogin" class="campo__escrita" />
-      <div id="erro"></div>
-    </div>
-
     <label class="formulario__campo">
       <span class="campo__etiqueta">Senha</span>
       <input type="password" placeholder="Senha" formControlName="senha">
     </label>
 
-    <ion-button type="submit" [disabled]="formularioUsuario.invalid">CRIAR</ion-button>
+    <button type="submit" [disabled]="formularioUsuario.invalid">CRIAR</button>
   </form>
 </div>
 
