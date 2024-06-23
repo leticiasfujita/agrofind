@@ -71,6 +71,19 @@ app.post("/", async (req, res) => {
 })
 
 
+app.post("/login", async (req, res) => {
+    const email = req.body.email;
+    const password = req.body.password;
+    const userValidation = await UserModel.findOne({email});
+    let match = false;
+    if(userValidation){
+        match = userValidation.password == password? true: false;
+    } else {
+        return false
+    }
+    return res.send(match)
+})
+
 
 app.listen(port, () => {
     console.log('App Running')

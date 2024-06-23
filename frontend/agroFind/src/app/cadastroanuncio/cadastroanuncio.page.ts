@@ -44,7 +44,7 @@ export class CadastroanuncioPage  {
         },
         { 
           campo: 'contato', 
-          control: new FormControl('', [Validators.required, Validators.pattern(/^\(\d{2}\) \d{5}-\d{4}$/)]), 
+          control: new FormControl('', [Validators.required]), 
           mensagemErro: 'Contato é obrigatório. Use o formato (XX) XXXXX-XXXX.' 
         },
         { 
@@ -59,7 +59,7 @@ export class CadastroanuncioPage  {
       submitForm() {
 
         for (let i = 0; i < this.formulario.length; i++) {
-          if (this.formulario[i].control.invalid) {
+          if (this.formulario[i].campo.length) {
             alert(this.formulario[i].mensagemErro);
             return;
           }

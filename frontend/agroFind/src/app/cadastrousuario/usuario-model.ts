@@ -4,6 +4,12 @@ export interface UserResponse{
     password: string
 }
 
+export interface LoginResponse{
+    email: string,
+    password: string
+}
+
+
 export interface AnouncementResponse{
     name: string,
     valor: string,

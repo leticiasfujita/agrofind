@@ -35,7 +35,7 @@ export class CadastrousuarioPage implements OnInit {
 
   ngOnInit() { }
 
-  onSubmit() {debugger;
+  onSubmit() {
     if (this.formularioUsuario.valid) {
       console.log('Formulário válido, enviando dados', this.formularioUsuario.value);
 
