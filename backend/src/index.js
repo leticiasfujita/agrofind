@@ -4,8 +4,26 @@ const app = express()
 app.use(express.json())
 const port = 3000
 
+const cors = require("cors");
+app.use(cors());
+const corsOpts = {
+    origin: '*',
+  
+    methods: [
+      'GET',
+      'POST',
+    ],
+  
+    allowedHeaders: [
+      'Content-Type',
+    ],
+  }; 
+app.use(cors(corsOpts));
+
+
+
 //mongo conection string
-mongoose.connect('');
+mongoose.connect('mongodb+srv://leticiasfujita:4hzsfOeBQK8R5KF4@cluster0.hsn9ybt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
 
 
 const Schema = mongoose.Schema;
@@ -42,6 +60,7 @@ app.put("/:id", async (req, res) => {
 })
 
 app.post("/", async (req, res) => {
+    console.log(req);
     const user = new UserModel({
         name: req.body.name,
         email: req.body.email,
