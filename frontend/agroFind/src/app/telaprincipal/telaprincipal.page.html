@@ -11,16 +11,16 @@
   <body>
     <div class="advertisement">
       <li>
-        Deseja criar um anúncio? <button onclick="btCadastrarAnuncio()">Clique aqui</button>
+        Deseja criar um anúncio? <button (click)="btCadastrarAnuncio()">Clique aqui</button>
       </li>
       <li>
-        Meus anúncios <button onclick="btMeusAnuncios()">Clique aqui</button>
+        Meus anúncios <button (click)="btMeusAnuncios()">Clique aqui</button>
       </li>
 
       <div>
         <ul *ngIf="advertisement" class="list">
           <li *ngFor="let anouncement of advertisement" class="item">
-            <img class="listaopcoes" src="assets/icon/img/user.jpg" alt="1">
+            <img class="listaopcoes" src="assets/icon/img/user1.png" alt="1">
             <h3>{{ anouncement.name }}</h3>
             <p>{{ anouncement.occupationArea }}</p>
             <p>{{ anouncement.timeExperience }}</p>

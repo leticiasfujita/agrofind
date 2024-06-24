@@ -9,7 +9,6 @@ export interface LoginResponse{
     password: string
 }
 
-
 export interface AnouncementResponse{
     name: string,
     occupationArea: string,

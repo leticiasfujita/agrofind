@@ -30,4 +30,12 @@ export class TelaprincipalPage implements OnInit {
     return this.http.get<AnouncementResponse[]>('http://localhost:3000/advertisiment',{headers,})
   }
 
+  btCadastrarAnuncio(){
+    this.router.navigateByUrl('/cadastroanuncio');
+  }
+
+  btMeusAnuncios(){
+    this.router.navigateByUrl('/anunciocadastrado');
+  }
+
 }
