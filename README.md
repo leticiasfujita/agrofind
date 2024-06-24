@@ -2,13 +2,13 @@
 
 
 front-end ionic angular
-#npm install
+- npm install
 
 para startar
-#ionic serve --lab
+- ionic serve --lab
 
 
 back-end em node.js
-#npm install
-#cd src
-#node index.js
+- npm install
+- cd src
+- node index.js
