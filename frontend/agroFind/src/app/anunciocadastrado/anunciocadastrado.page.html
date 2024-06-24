@@ -2,15 +2,22 @@
   <header>
     <h1 class="banner__titulo1">Meus Anúncios</h1>
   </header>
-  <img src="assets/icon/img/meusanuncios.png" alt="imagemlogo">
   <body>
     <div class="container">
-      <ul class="lista">
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-        <li>Item 4</li>
-        <li>Item 5</li>
-      </ul>
+      <div class="advertisement">
+        <ul *ngIf="advertisement" class="list">
+          <li *ngFor="let anouncement of advertisement" class="item">
+            <img class="listaopcoes" [src]="anouncement.imageUrl" alt="1">
+            <h3>{{ anouncement.name }}</h3>
+            <p>{{ anouncement.occupationArea }}</p>
+            <p>{{ anouncement.timeExperience }}</p>
+            <p>{{ anouncement.adress }}</p>
+            <p>{{ anouncement.contact }}</p>
+            <p>{{ anouncement.city }}</p>
+            <p>{{ anouncement.description }}</p>
+          </li>
+        </ul>
+
+      </div>
     </div>
   </body>

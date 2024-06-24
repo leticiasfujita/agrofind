@@ -46,6 +46,8 @@ export class CadastroanuncioPage implements OnInit {
         adress: this.formularioAnuncio.get('endereco')!.value,
         city: this.formularioAnuncio.get('cidade')!.value,
         contact: this.formularioAnuncio.get('contato')!.value,
+        idUser: '6677bc2020cdc73c8b989ed7',
+        imageUrl: 'assets/icon/img/user1.png'
       }
       this.postNewUser(this.userBody).subscribe(response =>{console.log(response)});
       this.router.navigateByUrl('/telaprincipal');

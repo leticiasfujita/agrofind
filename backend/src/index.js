@@ -88,6 +88,8 @@ const advertisingSchema = new mongoose.Schema({
     contact: String,
     city: String,
     description: String,
+    imageUrl: String,
+    idUser: String,
 });
 
 const AdvertisingModel = mongoose.model('advertising', advertisingSchema);
@@ -106,13 +108,25 @@ app.post("/advertisiment", async (req, res) => {
         adress: req.body.adress,
         contact: req.body.contact,
         city: req.body.city,
-        description: req.body.description
+        description: req.body.description,
+        imageUrl: req.body.imageUrl,
+        idUser: req.body.idUser,
     })
     await advertisiment.save()
     res.send(advertisiment)
 })
 
+app.post("/myAdvertisiment", async (req, res) => {
+    const idUser = req.body.idUser;
+    console.log(idUser);
+    const listUsers = await AdvertisingModel.find({idUser: idUser})
+    console.log(listUsers);
+    return res.send(listUsers)
+})
+
 app.listen(port, () => {
     console.log('App Running')
 })
+
+
 

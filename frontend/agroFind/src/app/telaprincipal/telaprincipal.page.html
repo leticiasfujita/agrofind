@@ -20,7 +20,7 @@
       <div>
         <ul *ngIf="advertisement" class="list">
           <li *ngFor="let anouncement of advertisement" class="item">
-            <img class="listaopcoes" src="assets/icon/img/user1.png" alt="1">
+            <img class="listaopcoes" [src]="anouncement.imageUrl" alt="1">
             <h3>{{ anouncement.name }}</h3>
             <p>{{ anouncement.occupationArea }}</p>
             <p>{{ anouncement.timeExperience }}</p>

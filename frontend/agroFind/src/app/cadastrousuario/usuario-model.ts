@@ -17,4 +17,6 @@ export interface AnouncementResponse{
     contact: string,
     city: string,
     description: string
+    imageUrl: string,
+    idUser: string,
 }
