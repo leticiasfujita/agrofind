@@ -12,5 +12,10 @@ export interface LoginResponse{
 
 export interface AnouncementResponse{
     name: string,
-    valor: string,
+    occupationArea: string,
+    timeExperience: string,
+    adress: string,
+    contact: string,
+    city: string,
+    description: string
 }

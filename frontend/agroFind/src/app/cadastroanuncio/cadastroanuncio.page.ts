@@ -1,71 +1,61 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
-import { FormControl, Validators } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
+import { Router } from '@angular/router';
+import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { AnouncementResponse } from '../cadastrousuario/usuario-model';
 
 @Component({
   selector: 'app-cadastroanuncio',
   templateUrl: './cadastroanuncio.page.html',
   styleUrls: ['./cadastroanuncio.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, ReactiveFormsModule, IonicModule, HttpClientModule]
 })
-export class CadastroanuncioPage  {
-    formulario = [
-        { 
-          campo: 'nomeCompleto', 
-          control: new FormControl('', Validators.required), 
-          mensagemErro: 'Nome completo é obrigatório.' 
-        },
-        { 
-          campo: 'areaAtuacao', 
-          control: new FormControl('', Validators.required), 
-          mensagemErro: 'Área de Atuação é obrigatória.' 
-        },
-        { 
-          campo: 'descricaoAtividades', 
-          control: new FormControl('', Validators.required), 
-          mensagemErro: 'Descrição das atividades é obrigatória.' 
-        },
-        { 
-          campo: 'tempoExperiencia', 
-          control: new FormControl(''), 
-        },
-        { 
-          campo: 'endereco', 
-          control: new FormControl('', Validators.required), 
-          mensagemErro: 'Endereço é obrigatório.' 
-        },
-        { 
-          campo: 'cidade', 
-          control: new FormControl('', Validators.required), 
-          mensagemErro: 'Cidade é obrigatória.' 
-        },
-        { 
-          campo: 'contato', 
-          control: new FormControl('', [Validators.required]), 
-          mensagemErro: 'Contato é obrigatório. Use o formato (XX) XXXXX-XXXX.' 
-        },
-        { 
-          campo: 'infoAdicionais', 
-          control: new FormControl(''),
-        }
-    
-      ];
-    
-      constructor() { }
-    
-      submitForm() {
+export class CadastroanuncioPage implements OnInit {
 
-        for (let i = 0; i < this.formulario.length; i++) {
-          if (this.formulario[i].campo.length) {
-            alert(this.formulario[i].mensagemErro);
-            return;
-          }
-        }
+  userBody!:AnouncementResponse;
+
+  formularioAnuncio: FormGroup = new FormGroup({
+    nomeCompleto: new FormControl('', Validators.required),
+    areaAtuacao: new FormControl('', Validators.required),
+    descricaoAtividades: new FormControl('', Validators.required),
+    tempoExperiencia: new FormControl('', Validators.required),
+    endereco: new FormControl('', Validators.required),
+    cidade: new FormControl('', Validators.required),
+    contato: new FormControl('', Validators.required),
+    infoAdicionais: new FormControl('', Validators.required)
+  });
     
-        console.log("Formulário enviado!");
+  constructor(private router: Router, private http: HttpClient) { }
+
+  ngOnInit() { }
+
+  onSubmit() {
+    if (this.formularioAnuncio.valid) {
+      console.log('Formulário válido, enviando dados', this.formularioAnuncio.value);
+  
+      this.userBody = {
+        name: this.formularioAnuncio.get('nomeCompleto')!.value,
+        occupationArea: this.formularioAnuncio.get('areaAtuacao')!.value,
+        description: this.formularioAnuncio.get('descricaoAtividades')!.value,
+        timeExperience: this.formularioAnuncio.get('tempoExperiencia')!.value,
+        adress: this.formularioAnuncio.get('endereco')!.value,
+        city: this.formularioAnuncio.get('cidade')!.value,
+        contact: this.formularioAnuncio.get('contato')!.value,
       }
-    
+      this.postNewUser(this.userBody).subscribe(response =>{console.log(response)});
+      this.router.navigateByUrl('/telaprincipal');
+      } else {
+        console.log('Formulário inválido, verifique os campos.');
+      }
     }
+  
+  postNewUser(body:AnouncementResponse):Observable<AnouncementResponse>{
+    let headers = new HttpHeaders();
+    return this.http.post<AnouncementResponse>('http://localhost:3000/advertisiment',body,{headers,})
+  }
+}

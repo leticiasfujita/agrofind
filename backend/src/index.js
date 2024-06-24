@@ -20,11 +20,8 @@ const corsOpts = {
   }; 
 app.use(cors(corsOpts));
 
-
-
 //mongo conection string
 mongoose.connect('mongodb+srv://leticiasfujita:4hzsfOeBQK8R5KF4@cluster0.hsn9ybt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
-
 
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
@@ -70,7 +67,6 @@ app.post("/", async (req, res) => {
     res.send(user)
 })
 
-
 app.post("/login", async (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
@@ -84,7 +80,39 @@ app.post("/login", async (req, res) => {
     return res.send(match)
 })
 
+const advertisingSchema = new mongoose.Schema({
+    name: String,
+    occupationArea: String,
+    timeExperience: String,
+    adress: String,
+    contact: String,
+    city: String,
+    description: String,
+});
+
+const AdvertisingModel = mongoose.model('advertising', advertisingSchema);
+
+app.get("/advertisiment", async (req, res) => {
+    const listUsers = await AdvertisingModel.find()
+    return res.send(listUsers)
+})
+
+app.post("/advertisiment", async (req, res) => {
+    console.log(req);
+    const advertisiment = new AdvertisingModel({
+        name: req.body.name,
+        occupationArea: req.body.occupationArea,
+        timeExperience: req.body.timeExperience,
+        adress: req.body.adress,
+        contact: req.body.contact,
+        city: req.body.city,
+        description: req.body.description
+    })
+    await advertisiment.save()
+    res.send(advertisiment)
+})
 
 app.listen(port, () => {
     console.log('App Running')
 })
+

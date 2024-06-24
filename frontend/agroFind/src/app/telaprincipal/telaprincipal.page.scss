@@ -1,5 +1,23 @@
+.container {
+    width: 100%;
+    max-width: 400px;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f0ebeb;
+    color: #000000;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    font-size: 16px; 
+    line-height: 1.5; 
+  }
+
 header {
-    height: 30px;
+    background-color: #2d463b6e;
+    color: rgb(12, 11, 11); 
+    padding: 10px 20px; 
+    text-align: center; 
+    font-weight: bold; 
 }
 
 .cabecalho__telap {
@@ -12,32 +30,62 @@ header {
     max-width: 200px; 
     max-height: 100px;}
 
-.banner__titulo {
-        text-align: center; 
-        margin-top: 18px;
-        font-size: 18px;
-    }
-.listaopcoes {
-  display: flex;
-  flex-direction: column; /* Define a direção da lista como vertical */
-}
-
-.item {
-    margin: 10px;
-    display: flex;
-    align-items: center; /* Alinha os itens verticalmente */
-}
-
-.item img {
-    width: 100px; /* Tamanho fixo em pixels */
-    height: 100px; /* Altura fixa em pixels */
-    object-fit: cover; /* Ajusta a imagem para cobrir o espaço do contêiner */
-    margin-right: 10px; /* Espaçamento entre a imagem e o texto */
-}
-.item button {
-    flex: 1; /* Ocupa todo o espaço disponível horizontalmente */
+.banner__titulo1 {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    font-style: normal;
+    font-weight: 700;
     font-size: 18px;
-    background-color: transparent; /* Define o fundo como transparente */
-    border: none;
-    text-align: left; /* Alinha o texto do botão à esquerda */
+    color: var(--laranja);
+    margin-top: 1px; 
+    margin-bottom: 1em; 
+    }
+.banner__titulo2 {
+    text-align: center; 
+    font-family: Arial, sans-serif;
+    margin-top: auto;
+    font-size: 12px;
+    }
+body {
+    margin-top: 20px; 
+    background-color: #f0ebeb;
+    color: #000000;
+    font-family: Arial, sans-serif;
+    text-align: left;
+    font-size: 13px; 
+}
+button {
+    background-color: #f8f0f0;
+    color: #ff0404;
+}
+
+.listaopcoes {
+    width: 100%;
+    height: 13vh;
+    object-fit: cover;
+    max-width: 100px; /* Define a largura máxima da imagem */
+    flex-direction: column; 
+    margin-top: 20px; 
+  }
+
+.advertisement{
+    display: inline-block;
+    overflow: auto;
+    height: 500px;
+    width: 100%;
+}
+
+.list{
+    list-style-type: none;
+    margin: 0;
+    padding: 0 0 0 0;
+}
+
+.item{
+    display: flex;
+    flex-wrap: wrap;
+    width: 250px;
+    justify-content: space-between;
+    align-items: center;
+    align-content: stretch;
 }

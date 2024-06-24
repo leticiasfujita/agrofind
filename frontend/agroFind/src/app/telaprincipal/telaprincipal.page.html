@@ -1,30 +1,37 @@
-<header>
-  <div class="cabecalho__telap">
-  <img class="imagemlogo" src="assets/icon/img/logoagro.svg" alt="Logo do app">
-</div>
-  <h2 class="banner__titulo">Seja Bem Vindo ao AgroFind!</h2>
-</header>
+<div class="container">
+  <header>
+    <div class="cabecalho__telap">
+      <img class="imagemlogo" src="assets/icon/img/logoagro.svg" alt="Logo do app">
+    </div>
+    <h2 class="banner__titulo1">Seja Bem Vindo ao AgroFind!</h2>
+    <h2 class="banner__titulo2">Encontre as melhores oportunidades no campo com o AgroFind - sua plataforma de anúncios
+      agrícolas!"</h2>
+  </header>
 
-<div class="listaopcoes">
-  <div class="item">
-    <img src="assets/icon/img/plantio.jpg" alt="1">
-    <button>Plantação</button>
-  </div>
-  <div class="item">
-    <img src="assets/icon/img/pulverizacao.jpg" alt="2">
-    <button>Pulverização</button>
-  </div>
-  <div class="item">
-    <img src="assets/icon/img/colheita.jpg" alt="3">
-    <button>Colheita</button>
-  </div>
-  <div class="item">
-    <img src="assets/icon/img/consultoria.jpg" alt="4">
-    <button>Consultoria</button>
-  </div>
-  <div class="item">
-    <img src="assets/icon/img/anuncios.jpg" alt="5">
-    <button>Meus anúncios</button>
-  </div>
-</div>
+  <body>
+    <div class="advertisement">
+      <li>
+        Deseja criar um anúncio? <button onclick="btCadastrarAnuncio()">Clique aqui</button>
+      </li>
+      <li>
+        Meus anúncios <button onclick="btMeusAnuncios()">Clique aqui</button>
+      </li>
 
+      <div>
+        <ul *ngIf="advertisement" class="list">
+          <li *ngFor="let anouncement of advertisement" class="item">
+            <img class="listaopcoes" src="assets/icon/img/user.jpg" alt="1">
+            <h3>{{ anouncement.name }}</h3>
+            <p>{{ anouncement.occupationArea }}</p>
+            <p>{{ anouncement.timeExperience }}</p>
+            <p>{{ anouncement.adress }}</p>
+            <p>{{ anouncement.contact }}</p>
+            <p>{{ anouncement.city }}</p>
+            <p>{{ anouncement.description }}</p>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </body>
+</div>

@@ -6,30 +6,29 @@
   box-sizing: border-box;
   background-color: #f8f8f8;
   color: #000000;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  font-size: 16px;
   line-height: 1.5;
   overflow-y: auto; 
 }
+
+header {
+  background-color: #2d463b6e;
+  color: rgb(12, 11, 11); 
+  padding: 10px 20px; 
+  text-align: center; 
+  font-weight: bold; 
+}
+
 .principal__titulo {
+  font-size: 20px;
+  text-align: center; 
   font-family: Arial, sans-serif;
-  text-align: center;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 26px;
-  margin-bottom: 1em; 
 }
 
 .campo__etiqueta {
-  display: block;
+  margin-bottom: 15px; 
+  text-align: right; 
   font-family: Arial, sans-serif;
-  text-align: left;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 24px;
-  margin-left: 1em;
-  margin-bottom: 0.5em; 
+  font-size: 16px; 
 }
 
 .campo__escrita {

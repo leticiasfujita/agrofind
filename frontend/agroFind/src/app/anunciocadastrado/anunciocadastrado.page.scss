@@ -1,0 +1,40 @@
+.container {
+    width: 100%;
+    max-width: 400px;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    color: #000000;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    font-size: 16px; 
+    line-height: 1.5; 
+  }
+
+header {
+    background-color: #2d463b6e;
+    color: rgb(12, 11, 11); 
+    padding: 10px 20px; 
+    text-align: center; 
+    font-weight: bold; 
+}
+
+.banner__titulo1 {
+    font-family: Arial, sans-serif;
+    font-size: 24px; 
+    text-align: center;
+    font-style: normal;
+    }
+img {
+    margin: 20px + 5px;
+    max-width: 180px;
+    min-height: 150px;
+}
+.lista {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+  }

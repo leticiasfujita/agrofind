@@ -49,6 +49,7 @@ export class HomePage {
 
   cadastrar() {
     console.log('Cadastrar button clicked');
+    this.router.navigateByUrl('/cadastrousuario');
   }
 
 }
