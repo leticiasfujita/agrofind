@@ -1,24 +1,26 @@
 
-<div class="container">
-  <header class="cabecalho">
-<img src="assets/icon/img/logoagro.svg" alt="imagemlogo">
-  </header>
-
-<div class="container">
-<form [formGroup]="formularioLogin">
-  <div class="formulario__campo">
-    <label class="campo__etiqueta" for="userlogin">Login</label>
-    <input name="email" id="email" formControlName="email" type="email" class="campo__escrita" />
-    <div id="erro"></div>
-
-  <div class="formulario__campo">
-    <label class="campo__etiqueta" for="senha">Senha</label>
-    <input type="password" placeholder="Senha" formControlName="senha" class="campo__senha">
+<div class="scope">
+  <div class="container">
+    <header class="cabecalho">
+  <img src="assets/icon/img/logoagro.svg" alt="imagemlogo">
+    </header>
+  
+  <div class="container">
+  <form [formGroup]="formularioLogin">
+    <div class="formulario__campo">
+      <label class="campo__etiqueta" for="userlogin">Login</label>
+      <input name="email" id="email" formControlName="email" type="email" class="campo__escrita" />
+      <div id="erro"></div>
+  
+    <div class="formulario__campo">
+      <label class="campo__etiqueta" for="senha">Senha</label>
+      <input type="password" placeholder="Senha" formControlName="senha" class="campo__senha">
+    </div>
+    <button class="formulario__botao" (click)="entrarLogin()">Entrar</button>
+    </div>
+  </form>
+  
+  <h2 class="banner__titulo">Não tem cadastro?!</h2>
+  <button (click)="cadastrar()">Clique aqui</button>
   </div>
-  <button class="formulario__botao" (click)="entrarLogin()">Entrar</button>
-  </div>
-</form>
-
-<h2 class="banner__titulo">Não tem cadastro?!</h2>
-<button (click)="cadastrar()">Clique aqui</button>
 </div>

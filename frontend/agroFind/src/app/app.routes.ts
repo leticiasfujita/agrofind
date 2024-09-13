@@ -4,7 +4,7 @@ import { HomePage } from './home/home.page';
 import { CadastroanuncioPage } from './cadastroanuncio/cadastroanuncio.page';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'cadastrousuario', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'cadastrousuario', component: CadastrousuarioPage },
   { path: 'home', component: HomePage },
   { path: 'cadastroanuncio', component: CadastroanuncioPage },

@@ -71,7 +71,7 @@ button {
     display: inline-block;
     overflow: auto;
     height: 500px;
-    width: 100%;
+    width: 39vw;
 }
 
 .list{
@@ -88,3 +88,10 @@ button {
     align-items: center;
     align-content: stretch;
 }
+
+
+@media only screen and (max-width: 900px) {
+    .advertisement{
+        width: 100%;
+    }
+  }

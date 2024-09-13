@@ -1,37 +1,39 @@
-<div class="container">
-  <header>
-    <div class="cabecalho__telap">
-      <img class="imagemlogo" src="assets/icon/img/logoagro.svg" alt="Logo do app">
-    </div>
-    <h2 class="banner__titulo1">Seja Bem Vindo ao AgroFind!</h2>
-    <h2 class="banner__titulo2">Encontre as melhores oportunidades no campo com o AgroFind - sua plataforma de anúncios
-      agrícolas!"</h2>
-  </header>
-
-  <body>
-    <div class="advertisement">
-      <li>
-        Deseja criar um anúncio? <button (click)="btCadastrarAnuncio()">Clique aqui</button>
-      </li>
-      <li>
-        Meus anúncios <button (click)="btMeusAnuncios()">Clique aqui</button>
-      </li>
-
-      <div>
-        <ul *ngIf="advertisement" class="list">
-          <li *ngFor="let anouncement of advertisement" class="item">
-            <img class="listaopcoes" [src]="anouncement.imageUrl" alt="1">
-            <h3>{{ anouncement.name }}</h3>
-            <p>{{ anouncement.occupationArea }}</p>
-            <p>{{ anouncement.timeExperience }}</p>
-            <p>{{ anouncement.adress }}</p>
-            <p>{{ anouncement.contact }}</p>
-            <p>{{ anouncement.city }}</p>
-            <p>{{ anouncement.description }}</p>
-          </li>
-        </ul>
-
+<div class="scope">  
+  <div class="container">
+    <header>
+      <div class="cabecalho__telap">
+        <img class="imagemlogo" src="assets/icon/img/logoagro.svg" alt="Logo do app">
       </div>
+      <h2 class="banner__titulo1">Seja Bem Vindo ao AgroFind!</h2>
+      <h2 class="banner__titulo2">Encontre as melhores oportunidades no campo com o AgroFind - sua plataforma de anúncios
+        agrícolas!"</h2>
+      </header>
+      
+      <body>
+        <div class="advertisement">
+          <li>
+            Deseja criar um anúncio? <button (click)="btCadastrarAnuncio()">Clique aqui</button>
+          </li>
+          <li>
+            Meus anúncios <button (click)="btMeusAnuncios()">Clique aqui</button>
+          </li>
+          
+          <div>
+            <ul *ngIf="advertisement" class="list">
+              <li *ngFor="let anouncement of advertisement" class="item">
+                <img class="listaopcoes" [src]="anouncement.imageUrl" alt="1">
+                <h3>{{ anouncement.name }}</h3>
+                <p>{{ anouncement.occupationArea }}</p>
+                <p>{{ anouncement.timeExperience }}</p>
+                <p>{{ anouncement.adress }}</p>
+                <p>{{ anouncement.contact }}</p>
+                <p>{{ anouncement.city }}</p>
+                <p>{{ anouncement.description }}</p>
+              </li>
+            </ul>
+            
+          </div>
+        </div>
+      </body>
     </div>
-  </body>
-</div>
+  </div>

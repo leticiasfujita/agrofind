@@ -1,83 +1,85 @@
+<div class="scope">
+  <div class="container">
+    <header>
+      <div class="principal__titulo">
+        <h1>Cadastro Usuário</h1>
+      </div>
+    </header>
 
-<div class="container">
-<header>
-<div class="principal__titulo">
-<h1>Cadastro Usuário</h1>
-</div>
-</header>
+    <div class="formulario">
+      <form [formGroup]="formularioUsuario" (ngSubmit)="onSubmit()">
+        <div class="formulario__campo">
+          <label class="campo__etiqueta" for="nome">Nome Completo</label>
+          <input name="nome" id="nome" formControlName="nomeCompleto" class="campo__escrita">
+        </div>
 
-<div class="formulario">
-  <form [formGroup]="formularioUsuario" (ngSubmit)="onSubmit()">
-    <div class="formulario__campo">
-      <label class="campo__etiqueta" for="nome">Nome Completo</label>
-      <input name="nome" id="nome" formControlName="nomeCompleto" class="campo__escrita">
+        <div class="formulario__campo">
+          <label class="campo__etiqueta" for="email">E-mail</label>
+          <input name="email" id="email" formControlName="email" type="email" class="campo__escrita" />
+        </div>
+
+        <div class="formulario__campo">
+          <label class="campo__etiqueta" for="nascimento">Data de Nascimento</label>
+          <input name="nascimento" id="nascimento" formControlName="dataNascimento" type="date"
+            class="campo__escrita" />
+        </div>
+
+        <div class="formulario__campo">
+          <label class="campo__etiqueta" for="endereco">Endereço</label>
+          <input name="endereco" id="endereco" formControlName="endereco" class="campo__escrita" />
+        </div>
+
+        <div class="formulario__campo">
+          <label class="campo__etiqueta" for="cidade">Cidade</label>
+          <input name="cidade" id="cidade" formControlName="cidade" class="campo__escrita" />
+        </div>
+
+        <div class="formulario__campo">
+          <label class="campo__etiqueta" for="estado">Estado</label>
+          <select id="estado" formControlName="estado" name="estado" class="campo__escrita">
+            <option value="AC">Acre</option>
+            <option value="AL">Alagoas</option>
+            <option value="AP">Amapá</option>
+            <option value="AM">Amazonas</option>
+            <option value="BA">Bahia</option>
+            <option value="CE">Ceará</option>
+            <option value="DF">Distrito Federal</option>
+            <option value="ES">Espírito Santo</option>
+            <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PA">Pará</option>
+            <option value="PB">Paraíba</option>
+            <option value="PR">Paraná</option>
+            <option value="PE">Pernambuco</option>
+            <option value="PI">Piauí</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="RO">Rondônia</option>
+            <option value="RR">Roraima</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SP">São Paulo</option>
+            <option value="SE">Sergipe</option>
+            <option value="TO">Tocantins</option>
+            <option value="EX">Estrangeiro</option>
+          </select>
+        </div>
+
+        <div class="formulario__campo">
+          <label class="campo__etiqueta" for="telefone">Contato</label>
+          <input name="telefone" id="telefone" formControlName="contato" type="tel" placeholder="(XX) XXXXX-XXXX"
+            class="campo__escrita" />
+        </div>
+
+        <div class="formulario__campo">
+          <label class="campo__etiqueta">Senha</label>
+          <input type="password" placeholder="Senha" formControlName="senha" class="campo__escrita">
+        </div>
+
+        <button type="submit" [disabled]="formularioUsuario.invalid">CRIAR</button>
+      </form>
     </div>
-
-    <div class="formulario__campo">
-      <label class="campo__etiqueta" for="email">E-mail</label>
-      <input name="email" id="email" formControlName="email" type="email" class="campo__escrita"/>
-    </div>
-
-    <div class="formulario__campo">
-      <label class="campo__etiqueta" for="nascimento">Data de Nascimento</label>
-      <input name="nascimento" id="nascimento" formControlName="dataNascimento" type="date" class="campo__escrita"/>
-    </div>
-
-    <div class="formulario__campo">
-      <label class="campo__etiqueta" for="endereco">Endereço</label>
-      <input name="endereco" id="endereco" formControlName="endereco" class="campo__escrita" />
-    </div>
-
-    <div class="formulario__campo">
-      <label class="campo__etiqueta" for="cidade">Cidade</label>
-      <input name="cidade" id="cidade" formControlName="cidade" class="campo__escrita" />
-    </div>
-
-    <div class="formulario__campo">
-      <label class="campo__etiqueta" for="estado">Estado</label>
-      <select id="estado" formControlName="estado" name="estado" class="campo__escrita">
-        <option value="AC">Acre</option>
-        <option value="AL">Alagoas</option>
-        <option value="AP">Amapá</option>
-        <option value="AM">Amazonas</option>
-        <option value="BA">Bahia</option>
-        <option value="CE">Ceará</option>
-        <option value="DF">Distrito Federal</option>
-        <option value="ES">Espírito Santo</option>
-        <option value="GO">Goiás</option>
-        <option value="MA">Maranhão</option>
-        <option value="MT">Mato Grosso</option>
-        <option value="MS">Mato Grosso do Sul</option>
-        <option value="MG">Minas Gerais</option>
-        <option value="PA">Pará</option>
-        <option value="PB">Paraíba</option>
-        <option value="PR">Paraná</option>
-        <option value="PE">Pernambuco</option>
-        <option value="PI">Piauí</option>
-        <option value="RJ">Rio de Janeiro</option>
-        <option value="RN">Rio Grande do Norte</option>
-        <option value="RS">Rio Grande do Sul</option>
-        <option value="RO">Rondônia</option>
-        <option value="RR">Roraima</option>
-        <option value="SC">Santa Catarina</option>
-        <option value="SP">São Paulo</option>
-        <option value="SE">Sergipe</option>
-        <option value="TO">Tocantins</option>
-        <option value="EX">Estrangeiro</option>
-      </select>
-    </div>
-
-    <div class="formulario__campo">
-      <label class="campo__etiqueta" for="telefone">Contato</label>
-      <input name="telefone" id="telefone" formControlName="contato" type="tel" placeholder="(XX) XXXXX-XXXX" class="campo__escrita"/>
-    </div>
-
-    <label class="formulario__campo">
-      <span class="campo__etiqueta">Senha</span>
-      <input type="password" placeholder="Senha" formControlName="senha">
-    </label>
-
-    <button type="submit" [disabled]="formularioUsuario.invalid">CRIAR</button>
-  </form>
-</div>
-
+  </div>
