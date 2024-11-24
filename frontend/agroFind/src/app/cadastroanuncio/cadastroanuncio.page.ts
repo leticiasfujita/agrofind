@@ -58,6 +58,6 @@ export class CadastroanuncioPage implements OnInit {
   
   postNewUser(body:AnouncementResponse):Observable<AnouncementResponse>{
     let headers = new HttpHeaders();
-    return this.http.post<AnouncementResponse>('http://localhost:3000/advertisiment',body,{headers,})
+    return this.http.post<AnouncementResponse>('https://agrofindbackrender.onrender.com/advertisiment',body,{headers,})
   }
 }

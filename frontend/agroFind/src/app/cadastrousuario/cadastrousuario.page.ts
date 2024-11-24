@@ -52,6 +52,6 @@ export class CadastrousuarioPage implements OnInit {
 
   postNewUser(body:UserResponse):Observable<UserResponse>{
     let headers = new HttpHeaders();
-    return this.http.post<UserResponse>('http://localhost:3000/',body,{headers,})
+    return this.http.post<UserResponse>('https://agrofindbackrender.onrender.com/',body,{headers,})
   }
 }

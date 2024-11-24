@@ -42,7 +42,7 @@ export class AnunciocadastradoPage implements OnInit {
 
   getAllAdvertising(body:AnouncementResponse):Observable<AnouncementResponse[]>{
     let headers = new HttpHeaders();
-    return this.http.post<AnouncementResponse[]>('http://localhost:3000/myadvertisiment',body,{headers,})
+    return this.http.post<AnouncementResponse[]>('https://agrofindbackrender.onrender.com/myadvertisiment',body,{headers,})
   }
 
 }

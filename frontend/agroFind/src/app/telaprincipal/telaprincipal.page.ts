@@ -27,7 +27,7 @@ export class TelaprincipalPage implements OnInit {
 
   getAllAdvertising():Observable<AnouncementResponse[]>{
     let headers = new HttpHeaders();
-    return this.http.get<AnouncementResponse[]>('http://localhost:3000/advertisiment',{headers,})
+    return this.http.get<AnouncementResponse[]>('https://agrofindbackrender.onrender.com/advertisiment',{headers,})
   }
 
   btCadastrarAnuncio(){
