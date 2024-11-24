@@ -55,6 +55,11 @@ export class CadastroanuncioPage implements OnInit {
         console.log('Formulário inválido, verifique os campos.');
       }
     }
+
+    cancelar(): void {
+      this.router.navigateByUrl('/telaprincipal'); 
+    }
+    
   
   postNewUser(body:AnouncementResponse):Observable<AnouncementResponse>{
     let headers = new HttpHeaders();

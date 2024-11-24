@@ -1,126 +1,245 @@
-.container {
-  width: 100%;
-  min-height: 100vh;
-  padding: 20px;
+$primary-color: #4CAF50;      
+$secondary-color: #ffffff;    
+$text-color: #333;            
+$border-color: #ccc;          
+$padding: 30px;               
+$spacing: 30px;               
+$extra-spacing: 60px;         
+
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  background-color: #f0ebeb;
-  color: #000000;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  font-size: 16px; 
-  line-height: 1.5; 
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  color: $text-color;
+  background-color: $secondary-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;  
+  min-height: 100vh;
+  padding: 0;
+}
+
+.scope {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;  
+  width: 100%;
+  height: 100%; 
+  background-color: #f9f9f9;
+  overflow: auto;
+  padding: 0;
 }
 
 .cabecalho {
-  height: auto; 
-  margin-top: 80px; 
+  background-color: $primary-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 50%;
+  margin: 0 auto;
+  margin-bottom: $extra-spacing; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+  img {
+    width: 240px;
+    height: auto;
+  }
+
+  nav {
+    display: flex;
+    gap: 20px;
+    
+    a {
+      text-decoration: none;
+      color: $secondary-color;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: lighten($secondary-color, 20%);
+      }
+    }
+  }
 }
 
-.imagemlogo {
-  max-width: 100%; 
-  height: auto; 
+.container {
+  max-width: 600px;
+  width: 100%;
+  padding: $padding;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-bottom: $extra-spacing;  
+  height: auto;
 }
 
-.principal__titulo {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 24px;
-  text-align: center;
-  margin: 20px 0 15px; 
-}
-
-.formulario {
+.box {
+  width: 100%;
+  background-color: $secondary-color;
+  padding: $padding;
+  border-radius: 12px; 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); 
   display: flex;
   flex-direction: column;
-  align-items: center; 
-}
-
-.campo__etiqueta {
-  display: block;
-  margin-bottom: 5px;
-  text-align: left;
+  gap: 30px;  
+  max-width: 600px; 
+  margin-bottom: $extra-spacing; 
 }
 
 .formulario__campo {
-  margin: 0.6em 0; 
-}
+  margin-bottom: $spacing;
+  color: #000000;
 
-.campo__escrita,
-.campo__senha {
-  width: 100%;
-  height: 40px;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #161515; 
-  border-radius: 5px;
-  box-sizing: border-box;
-  background-color: #f5eeee;
-  color: #131111;
+  .campo__etiqueta {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 12px;  
+    color: #333;
+    font-size: 1.5rem;  
+  }
+
+  .campo__escrita,
+  .campo__senha {
+    width: 100%;
+    padding: 18px;  
+    border: 1px solid $border-color;
+    border-radius: 8px;  
+    font-size: 1.2rem;  
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+  }
+
+  .campo__escrita:focus,
+  .campo__senha:focus {
+    border-color: $primary-color;
+    outline: none;
+  }
 }
 
 .formulario__botao {
-  width: 100%; 
-  margin-top: 10px;
-  padding: 10px;
-  background-color: #208f61; 
-  color: #fff;
+  display: block;
+  width: 100%;
+  padding: 18px;  
+  background-color: $primary-color;
+  color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;  
+  font-size: 1.2rem;  
   cursor: pointer;
-  text-align: center;
-  margin-top: 50px; 
-  font-family: Arial, sans-serif;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
 }
 
 .banner__titulo {
+  margin: 30px 0;
   text-align: center;
-  margin-top: 20px;
-  font-size: 18px;
+  color: $primary-color;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 button {
   display: block;
-  width: 100%;
-  max-width: 200px; 
-  margin: 20px auto; 
-  padding: 10px 20px;
-  background-color: #7b7c78; 
-  color: #fff;
+  margin: 10px auto;  
+  padding: 14px 30px;
+  background-color: $primary-color;
+  color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 16px;
-  text-align: center;
+  font-size: 1rem;
   transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: lighten($primary-color, 10%);
+  }
+}
+
+.rodape {
+  background-color: $primary-color;
+  color: $secondary-color;
+  text-align: center;
+  padding: $padding;
+  width: 100%;
+  max-width: 50%;
+  margin: $extra-spacing auto 0;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+
+  p {
+    margin: 12px 0;
+    font-size: 1.2rem;  
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+
+    a {
+      text-decoration: none;
+      color: $secondary-color;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: lighten($secondary-color, 20%);
+      }
+    }
+  }
 }
 
 @media (max-width: 768px) {
-  .principal__titulo {
-    font-size: 20px;
-    margin: 15px 0;
+  .container {
+    padding: $padding / 2;
+    max-width: 90%;
   }
-  
-  .campo__etiqueta {
-    font-size: 14px;
+
+  .cabecalho,
+  .rodape {
+    max-width: 90%;
+    padding: $padding / 2;
   }
-  
-  .formulario__campo {
-    padding: 0 5px;
+
+  nav a {
+    font-size: 0.9rem;
   }
-  
-  .campo__escrita,
-  .campo__senha {
-    padding: 8px;
-    margin-bottom: 10px; /* Reduzir a margem inferior */
-  }
-  
+
   .formulario__botao,
   button {
-    padding: 10px;
+    font-size: 1rem;
   }
-  
+
+  .box {
+    padding: $padding / 2;
+    max-width: 100%;
+  }
+
+  .campo__escrita,
+  .campo__senha {
+    padding: 16px;  
+  }
+
   .banner__titulo {
-    font-size: 16px;
-    margin-top: 15px;
+    margin: 10px 0;  
+    text-align: center;
+    color: $primary-color;
+    font-size: 1.8rem;
+    font-weight: bold;
   }
 }

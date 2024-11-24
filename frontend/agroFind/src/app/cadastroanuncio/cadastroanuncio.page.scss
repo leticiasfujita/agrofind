@@ -1,77 +1,132 @@
+@mixin centralizar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.scope {
+  padding-right: 10%;
+  padding-left: 10%;
+  background-color: #f0ebeb;
+  overflow: auto;
+}
+
 .container {
-  width: 100%;
-  min-height: 100vh; 
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
-  box-sizing: border-box;
-  background-color: #f8f8f8;
-  color: #000000;
-  line-height: 1.5;
-  overflow-y: auto; 
 }
 
 header {
-  background-color: #2d463b6e;
-  color: rgb(12, 11, 11); 
-  padding: 10px 20px; 
-  text-align: center; 
-  font-weight: bold; 
+  @include centralizar;
+  flex-direction: column;
+  background-color: #4CAF50;
+  $font-family: 'Arial', sans-serif;
+  color: white;
+  padding: 20px;
+
+  .logo {
+    max-width: 150px;
+    margin-bottom: 5px;
+  }
+
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+  }
 }
 
-h1 {
-  font-size: 26px;
-  text-align: center; 
-  font-family: Arial, sans-serif;
+.form-anuncio {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  .form-group {
+    margin-bottom: 20px;
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #000000;     
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+      background-color: #f5f5f5;
+      color: #000000;
+
+      &:focus {
+        outline: none;
+        border-color: #4CAF50;
+      }
+    }
+  }
+
+  .btn-container {
+    @include centralizar;
+    gap: 20px;
+
+    .btn {
+      padding: 10px 20px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+
+      &.btn-primary {
+        background-color: #4CAF50;
+        color: white;
+
+        &:hover {
+          background-color: #45a049;
+        }
+      }
+
+      &.btn-cancelar {
+        background-color: #f44336;
+        color: white;
+
+        &:hover {
+          background-color: #d32f2f;
+        }
+      }
+    }
+  }
 }
 
-.form-group {
-  margin-bottom: 15px; 
-  text-align: left; 
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-}
+@media (max-width: 768px) {
+  header {
+    .title {
+      font-size: 1.5rem;
+    }
+  }
 
-label {
-  font-weight: bold; 
-}
+  .form-anuncio {
+    padding: 15px;
 
-input.form-control, textarea.form-control {
-  width: 100%; 
-  padding: 8px; 
-  border: 1px solid #161515; 
-  background-color: #dddddc;
-  border-radius: 4px; 
-  box-sizing: border-box; 
-  margin-top: 4px; 
-  margin-bottom: 8px; 
-}
+    .btn-container {
+      flex-direction: column;
 
-.btn-container {
-  display: flex;
-  justify-content: center; 
-  gap: 10px; 
-  margin-top: 20px; 
-}
-
-button.btn-primary, 
-button.btn-cancelar {
-    background-color: #208f61;
-    color: white; 
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button.btn-cancelar {
-    background-color: #FF6347;
-    color: white; 
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    
-}
-
-button.btn-primary:disabled {
-  opacity: 0.6; 
-  cursor: not-allowed; 
+      .btn {
+        width: 100%;
+      }
+    }
+  }
 }

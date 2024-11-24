@@ -1,55 +1,57 @@
 <div class="scope">
   <div class="container">
-    <form [formGroup]="formularioAnuncio" (ngSubmit)="onSubmit()">
-      
-      <header>
-        <h1>Cadastro de Anúncios</h1>
-      </header>
-      
-      <div class="form-group">
-        <label for="nomeCompleto">Nome Completo:</label>
-        <input type="text" id="nomeCompleto" name="nomeCompleto" class="form-control" formControlName="nomeCompleto" ngModel required>
-      </div>
-      
-      <div class="form-group">
-        <label for="areaAtuacao">Área de Atuação:</label>
-        <input type="text" id="areaAtuacao" name="areaAtuacao" class="form-control" formControlName="areaAtuacao" ngModel>
-      </div>
-      
-      <div class="form-group">
-        <label for="descricaoAtividades">Descreva as principais atividades realizadas:</label>
-        <textarea id="descricaoAtividades" name="descricaoAtividades" class="form-control" formControlName="descricaoAtividades" ngModel rows="5"></textarea>
-      </div>
-      
-      <div class="form-group">
-        <label for="tempoExperiencia">Tempo de Experiência:</label>
-        <input type="text" id="tempoExperiencia" name="tempoExperiencia" formControlName="tempoExperiencia" class="form-control" ngModel>
-      </div>
-      
-      <div class="form-group">
-        <label for="endereco">Endereço:</label>
-        <input type="text" id="endereco" name="endereco" class="form-control" formControlName="endereco" ngModel>
-      </div>
-      
-      <div class="form-group">
-        <label for="cidade">Cidade:</label>
-        <input type="text" id="cidade" name="cidade" class="form-control" formControlName="cidade" ngModel>
-      </div>
-      
-      <div class="form-group">
-        <label for="contato">Contato:</label>
-        <input type="text" id="contato" name="contato" class="form-control" formControlName="contato" ngModel>
-      </div>
-      
-      <div class="form-group">
-        <label for="infoAdicionais">Informações adicionais:</label>
-        <textarea id="infoAdicionais" name="infoAdicionais" class="form-control" formControlName="infoAdicionais" ngModel rows="5"></textarea>
-      </div>
-      
-      <div class="btn-container">
-        <button type="submit" class="btn btn-primary">Criar</button>
-        <button type="submit" class="btn btn-cancelar">Cancelar</button>
-      </div>
-    </form>
+    <header>
+      <img class="logo" src="assets/icon/img/logoagro.svg" alt="Logo AgroFind">
+      <h1 class="title">Cadastro de Anúncios!</h1>
+    </header>
+
+    <main>
+      <form class="form-anuncio" [formGroup]="formularioAnuncio" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="nomeCompleto">Nome Completo:</label>
+          <input type="text" id="nomeCompleto" name="nomeCompleto" class="form-control" formControlName="nomeCompleto" ngModel required>
+        </div>
+
+        <div class="form-group">
+          <label for="areaAtuacao">Área de Atuação:</label>
+          <input type="text" id="areaAtuacao" name="areaAtuacao" class="form-control" formControlName="areaAtuacao" ngModel>
+        </div>
+
+        <div class="form-group">
+          <label for="descricaoAtividades">Descreva as principais atividades realizadas:</label>
+          <textarea id="descricaoAtividades" name="descricaoAtividades" class="form-control" formControlName="descricaoAtividades" ngModel rows="5"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="tempoExperiencia">Tempo de Experiência:</label>
+          <input type="text" id="tempoExperiencia" name="tempoExperiencia" class="form-control" formControlName="tempoExperiencia" ngModel>
+        </div>
+
+        <div class="form-group">
+          <label for="endereco">Endereço:</label>
+          <input type="text" id="endereco" name="endereco" class="form-control" formControlName="endereco" ngModel>
+        </div>
+
+        <div class="form-group">
+          <label for="cidade">Cidade:</label>
+          <input type="text" id="cidade" name="cidade" class="form-control" formControlName="cidade" ngModel>
+        </div>
+
+        <div class="form-group">
+          <label for="contato">Contato:</label>
+          <input type="text" id="contato" name="contato" class="form-control" formControlName="contato" ngModel>
+        </div>
+
+        <div class="form-group">
+          <label for="infoAdicionais">Informações adicionais:</label>
+          <textarea id="infoAdicionais" name="infoAdicionais" class="form-control" formControlName="infoAdicionais" ngModel rows="5"></textarea>
+        </div>
+
+        <div class="btn-container">
+          <button type="submit" class="btn btn-primary">Criar</button>
+          <button type="button" class="btn btn-cancelar" (click)="cancelar()">Cancelar</button>
+        </div>
+      </form>
+    </main>
   </div>
-    
+</div>

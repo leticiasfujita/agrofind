@@ -1,67 +1,88 @@
-.container {
-    width: 100%;
-    min-height: 100vh;
-    padding: 20px;
-    box-sizing: border-box;
-    background-color: #f0ebeb;
-    color: #000000;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    font-size: 16px; 
-    line-height: 1.5; 
-  }
-
-header {
-    background-color: #2d463b6e;
-    color: rgb(12, 11, 11); 
-    padding: 10px 20px; 
-    text-align: center; 
-    font-weight: bold; 
-}
-
-.banner__titulo1 {
-    font-family: Arial, sans-serif;
-    font-size: 24px; 
-    text-align: center;
-    font-style: normal;
-    }
-img {
-    margin: 20px + 5px;
-    max-width: 180px;
-    min-height: 150px;
-}
-.lista {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    font-size: 18px;
-  }
-
-  .list{
-    list-style-type: none;
-    margin: 0;
-    padding: 0 0 0 0;
-}
-
-.item{
+@mixin flex-center {
     display: flex;
-    flex-wrap: wrap;
-    width: 250px;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    align-content: stretch;
-}
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
-.advertisement{
+  .scope {
+    padding-right: 10%;
+    padding-left: 10%;
+    background-color: #f0ebeb;
     overflow: auto;
-    height: 500px;
-    width: 39vw;
-}
-
-
-@media only screen and (max-width: 900px) {
-    .advertisement{
-        width: 100%;
+  }
+  
+  header {
+    background-color: #4CAF50;
+    padding: 20px 0;
+    text-align: center;
+  
+    h1 {
+      color: #fff;
+      font-size: 2.5rem;
+      margin: 0;
     }
   }
+  
+  .advertisement {
+    margin: 20px 0;
+  
+    .list {
+      list-style: none;
+      padding: 0;
+  
+      .item {
+        @include flex-center;
+        flex-direction: column;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        background-color: #f9f9f9;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+        h3 {
+          font-size: 1.5rem;
+          color: #333;
+          margin: 10px 0;
+        }
+  
+        p {
+          font-size: 1rem;
+          color: #666;
+          margin: 5px 0;
+        }
+  
+        img {
+          max-width: 150px;
+          height: auto;
+          border-radius: 8px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 2rem;
+    }
+  
+    .advertisement .item {
+      padding: 15px;
+  
+      h3 {
+        font-size: 1.3rem;
+      }
+  
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  }
+  

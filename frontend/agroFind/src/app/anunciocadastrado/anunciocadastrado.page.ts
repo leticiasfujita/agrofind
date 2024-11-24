@@ -16,33 +16,20 @@ import { Observable } from 'rxjs';
 })
 export class AnunciocadastradoPage implements OnInit {
 
-  advertisement!:AnouncementResponse[];
-  userBody!:AnouncementResponse;
+  advertisement!: AnouncementResponse[];
+  userId: string = '6677bc2020cdc73c8b989ed7'; 
 
   constructor(private router: Router, private http: HttpClient) { }
 
   ngOnInit() {
-
-    this.userBody = {
-      name: '',
-      occupationArea: '',
-      description: '',
-      timeExperience: '',
-      adress: '',
-      city: '',
-      contact: '',
-      idUser: '6677bc2020cdc73c8b989ed7',
-      imageUrl: ''
-    }
-    
-    this.getAllAdvertising(this.userBody).subscribe(response =>{    
-      this.advertisement = response;
+    this.getAllAdvertising(this.userId).subscribe(response => {
+      this.advertisement = response; 
     });
   }
 
-  getAllAdvertising(body:AnouncementResponse):Observable<AnouncementResponse[]>{
+  getAllAdvertising(userId: string): Observable<AnouncementResponse[]> {
+    const body = { idUser: userId }; 
     let headers = new HttpHeaders();
-    return this.http.post<AnouncementResponse[]>('https://agrofindbackrender.onrender.com/myadvertisiment',body,{headers,})
+    return this.http.post<AnouncementResponse[]>('https://agrofindbackrender.onrender.com/myadvertisiment', body, { headers });
   }
-
 }
